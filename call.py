@@ -35,7 +35,7 @@ def message_reply(message):
         bot.send_message(message.chat.id,'Чтобы ознакомиться с тарифом, выбери необходимый, нажав соответствующую кнопку',reply_markup=markup)
         
     markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
-    delete.markup()
+    
     markup.add(pay)
     
     
@@ -45,10 +45,10 @@ def message_reply(message):
                      
             bot.send_message(user_id,"Способ оплаты:\nПо номеру +7 (915) 785 16 13 Федор Г. \nТ-Банк(Обязательно!)\n  \nК оплате: 160.00 🇷🇺RUB",reply_markup=markup)
                 
-    if message.text=='Месяц':
+    elif message.text=='Месяц':
                 
             bot.send_message(message.chat.id,"Способ оплаты:\nПо номеру +7 (915) 785 16 13 Федор Г. \nТ-Банк(Обязательно!)\n  \nК оплате: 380.00 🇷🇺RUB",reply_markup=markup)
-    if message.text=='Навсегда':
+    elif message.text=='Навсегда':
                 
             bot.send_message(message.chat.id,"Способ оплаты:\nПо номеру +7 (915) 785 16 13 Федор Г. \nТ-Банк(Обязательно!)\n  \nК оплате: 960.00 🇷🇺RUB",reply_markup=markup)
         
