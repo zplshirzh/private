@@ -45,10 +45,10 @@ def message_reply(message):
                      
             bot.send_message(user_id,"Способ оплаты:\nПо номеру +7 (915) 785 16 13 Федор Г. \nТ-Банк(Обязательно!)\n  \nК оплате: 160.00 🇷🇺RUB",reply_markup=markup)
                 
-    elif message.text=='Месяц':
+    if message.text=='Месяц':
                 
             bot.send_message(message.chat.id,"Способ оплаты:\nПо номеру +7 (915) 785 16 13 Федор Г. \nТ-Банк(Обязательно!)\n  \nК оплате: 380.00 🇷🇺RUB",reply_markup=markup)
-    elif message.text=='Навсегда':
+    if message.text=='Навсегда':
                 
             bot.send_message(message.chat.id,"Способ оплаты:\nПо номеру +7 (915) 785 16 13 Федор Г. \nТ-Банк(Обязательно!)\n  \nК оплате: 960.00 🇷🇺RUB",reply_markup=markup)
         
@@ -56,8 +56,7 @@ def message_reply(message):
         markup = types.ReplyKeyboardRemove()
         bot.send_message(message.chat.id,"Отправь скриншот об оплате ",reply_markup=markup)
         bot.register_next_step_handler(message, help_bot)
-    if message.text=='Назад' :
-         bot.register_next_step_handler(message, message_reply)
+    
         
 
 
